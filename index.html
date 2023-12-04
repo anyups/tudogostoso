@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tudo Gostoso - onde nascem todas as receitas</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="/images/icon-256_ios.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" href="/images/icon-256.png" sizes="256x256" />
+  <meta name="theme-color" content="white" />
+</head>
+<body>
+
+  <div class="topnav">
+    <img src="images/logo.png" alt="logo">
+  
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Procure uma receita, um inrediente, um tipo de prato .." name="search">
+        <button type="submit">Procurar</button>
+      </form>
+    </div>
+  
+    <i class="fa fa-user" aria-hidden="true" style="font-size: 25px;"></i>
+  </div>
+  
+  <div class="body">
+    <form action="/" class="decor">
+        <div class="form-left-decoration"></div>
+        <div class="form-right-decoration"></div>
+        <div class="circle"></div>
+        <div class="form-inner">
+          <h1>Cadastre sua Receita</h1>
+          <input class="input" type="text" placeholder="Nome da receita">
+          <input class="input" type="email" placeholder="Seu nome">
+          <textarea placeholder="Escreva aqui o passo a passo." rows="5"></textarea>
+          <button class="button" type="submit" href="/">Enviar</button>
+        </div>
+    </form>
+  </div>
+
+  <!--<main id="camera">
+    <canvas id="camera--sensor"></canvas>
+    <video id="camera--view" autoplay playsinline></video>
+    <img src="//:0" alt="" id="camera--output">
+    <button id="camera--trigger">tirar foto</button>
+  </main>-->
+
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
