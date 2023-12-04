@@ -42,5 +42,6 @@ cameraTrigger.onclick = function () {
   cameraOutput.src = cameraSensor.toDataURL("image/webp");
   cameraOutput.classList.add("taken");
 };
+
 // carrega imagem de camera quando a janela carregar
 window.addEventListener("load", cameraStart, false);

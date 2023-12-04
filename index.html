@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="/images/icon-256_ios.png">
   <link rel="shortcut icon" href="favicon.ico">
@@ -20,7 +19,7 @@
 <body>
 
   <div class="topnav">
-    <img src="images/logo.png" alt="logo">
+    <img src="images/logo.png" width="512" height="512" alt="logo">
   
     <div class="search-container">
       <form action="/action_page.php">
@@ -28,9 +27,7 @@
         <button type="submit">Procurar</button>
       </form>
     </div>
-  
-    <i class="fa fa-user" aria-hidden="true" style="font-size: 25px;"></i>
-  </div>
+    </div>
   
   <div class="body">
     <form action="/" class="decor">
@@ -39,21 +36,22 @@
         <div class="circle"></div>
         <div class="form-inner">
           <h1>Cadastre sua Receita</h1>
-          <input class="input" type="text" placeholder="Nome da receita">
-          <input class="input" type="email" placeholder="Seu nome">
-          <textarea placeholder="Escreva aqui o passo a passo." rows="5"></textarea>
-          <button class="button" type="submit" href="/">Enviar</button>
+          <input class="input" type="text" placeholder="Nome da receita" id="nome">
+          <input class="input" type="text" placeholder="Seu nome" id="nomeDono">
+          <textarea placeholder="Escreva aqui o passo a passo." rows="5" id="receita"></textarea>
+          <button id="btnSalvar" class="button" type="submit" name="enviar">Enviar</button>
+          <button id="btnListar" class="button" type="submit" name="listar">Listar</button>
         </div>
     </form>
   </div>
-
-  <!--<main id="camera">
+  <div id="camera">
     <canvas id="camera--sensor"></canvas>
     <video id="camera--view" autoplay playsinline></video>
     <img src="//:0" alt="" id="camera--output">
-    <button id="camera--trigger">tirar foto</button>
-  </main>-->
+    <button id="camera--trigger" class="button">tirar foto</button>
+  </div>
 
   <script src="js/main.js" type="module"></script>
+  <script src="js/db.js" type="module"></script>
 </body>
 </html>
