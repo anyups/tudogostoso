@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
         const li = document.createElement("li");
         li.innerHTML = `
-        <hr color="orange"></hr>
             <div class="receita">
             <span>${name}</span> <br/>
             receita por: ${nomeDono} <br/>
@@ -84,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         listar.appendChild(li);
   
         nome.value = "";
+        dono.value = "";
         desc.value = "";
   
         li.querySelector(".excluir").addEventListener("click", () => {
@@ -91,3 +91,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
   });
+
+  
