@@ -1,33 +1,34 @@
-/*html, body{
-    margin: 0;
-    padding: 0;
+  #camera, #camera--view, #camera--sensor, #camera--output{
+    position: fixed;
     height: 100%;
     width: 100%;
-  }*/
-  #camera, #camera--view, #camera--sensor, #camera--output{
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
+    object-fit: cover;
   }
+
   #camera--view, #camera--sensor, #camera--output{
-      transform: scaleX(-1);
-      filter: FlipH;
+    transform: scaleX(-1);
+    filter: FlipH;
   }
   #camera--trigger{
-      width: 200px;
-      background-color: black;
-      color: white;
-      font-size: 16px;
-      border-radius: 30px;
-      border: none;
-      padding: 15px 20px;
-      text-align: center;
-      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-      position: fixed;
-      bottom: 30px;
-      left: calc(50% - 100px);
+    width: 200px;
+    background-color: #de4107;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 15%;
+    left: calc(50% - 100px);
+    border-bottom: 4px solid #ab0e00;
   }
+
+#camera--trigger:hover {
+    background: #dd770acb;
+} 
+
   .taken{
       height: 100px!important;
       width: 100px!important;
@@ -41,13 +42,13 @@
 
 
 
-* {
+
+  * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-display: swap;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -59,19 +60,19 @@ body {
 }
 
 .topnav img{
-    margin-top: -10.5%;
+    width: 23.2%;
+    margin-top: -126px;
     margin-left: 14.1%;
 }
 
 .topnav .search-container {
     position: absolute;
-    margin-top: -15.8%;
-    margin-left: 47%;
+    margin-top: -14.7%;
+    margin-left: 37%;
 }
 
 .topnav input[type=text] {
     font-family: 'Poppins', sans-serif;
-    font-display: swap;
     width: 415%;
     padding: 11px;
     margin-top: 14px;
@@ -93,8 +94,8 @@ body {
     height: 77%;
     padding: 8px 10px;
     margin-top: -21.3%;
-    margin-left: 244.5%;
-    background: #662200b5;
+    margin-left: 214.5%;
+    background: #ff5500e4;
     font-size: 15px;
     border: none;
     border-top-right-radius: 25px;
@@ -102,7 +103,6 @@ body {
     cursor: pointer;
     position: absolute;
     color: white;
-    font-display: swap;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -112,22 +112,31 @@ body {
     background: #ff5500aa;
 }
 
+i{
+    position: absolute;
+    margin-left: 40.7%;
+    margin-top: 1.6%;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: solid 1px white;
+    border-radius: 100%;
+    box-shadow: 0 3px 4px 0.5px rgba(0, 0, 0, 0.226);
+}
+
 /*form*/
 html, .body {
     min-height: 90vh;
     padding: 0;
     margin: 0;
-    font-size: 17px; 
-    color: #ffffff;
+    font-size: 14px; 
+    color: #5b5b5b;
     box-sizing: border-box;
-    font-weight: 900;
 }
 
 .input, textarea { 
     outline: none;
-    font-display: swap;
     font-family: 'Poppins', sans-serif;
-    font-weight: 900;
 }
 
 .body {
@@ -135,7 +144,7 @@ html, .body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background: #bcbcbc;
+    background: #ea8c28;
 }
 
 h1 {
@@ -147,8 +156,9 @@ h1 {
 .decor {
     position: relative;
     width: 55%;
+    height: 500px;
     border-radius: 30px;
-    background: #ff8800;
+    background: #fff;
 }
 
 .form-left-decoration,
@@ -158,7 +168,7 @@ h1 {
     width: 50px;
     height: 20px;
     border-radius: 20px;
-    background: #ff8800;
+    background: #ea8c28;
 }
 
 .form-left-decoration {
@@ -180,7 +190,7 @@ h1 {
     width: 50px;
     height: 20px;
     border-radius: 30px;
-    background: #ff8800;
+    background: #fff;
 }
 
 .form-left-decoration:before {
@@ -209,7 +219,7 @@ h1 {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #ff8800;
+    background: #fff;
 }
 
 .form-inner {
@@ -224,7 +234,7 @@ h1 {
     margin-bottom: 10px;
     border: none;
     border-radius: 20px;
-    background: #ffffff;
+    background: #ebf3f7;
 }
 
 .form-inner textarea {
@@ -237,17 +247,17 @@ h1 {
     margin-top: 20px;
     border-radius: 20px;
     border: none;
-    border-bottom: 4px solid #ff8800;
-    background: #ffb65c; 
-    font-size: 17px;
+    border-bottom: 4px solid #ab0e00;
+    background: #de4107; 
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.7px;
-    color: #ffffff;
+    color: #fff;
     font-family: 'Poppins', sans-serif;
 }
 
 .button:hover {
-    background: #ffc07c;
+    background: #dd770acb;
 } 
 
 @media (min-width: 568px) {
@@ -255,3 +265,51 @@ form {
     width: 60%;
 }
 }
+
+hr{
+    margin-top: -70px;
+    margin-bottom: 5px;
+}
+
+
+li{
+    list-style-type: none;
+    margin-top: 75px;
+    color: white;
+    font-size: 15px;
+}
+
+.receita{
+    margin-left: 30%;
+    padding: 20px;
+    background: #ea8c28;
+    width: 40%;
+    height: 200px;
+    border-radius: 20px;
+}
+
+span{
+    font-weight: 700;
+    color: rgb(255, 72, 0);
+    font-size: 18px;
+}
+
+.excluir{
+    width: 35%;
+    margin-left: 33%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+    border-bottom: 4px solid #ab0e00;
+    background: #de4107; 
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.excluir:hover {
+    background: #dd770acb;
+} 

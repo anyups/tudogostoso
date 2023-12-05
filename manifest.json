@@ -1,6 +1,6 @@
 {
-    "name": "camera",
-    "short_name": "pc",
+    "name": "tudogostoso",
+    "short_name": "tg",
     "icons": [
         {
             "src": "images/icon-256.png",
@@ -16,7 +16,7 @@
             "src": "images/icon-256.png",
             "sizes": "256x256",
             "type": "image/png",
-            "purpose": "maskable"
+            "purpose": "any maskable"
         }
     ],
     "lang": "pt-BR",

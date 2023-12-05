@@ -1,14 +1,14 @@
 import { openDB } from "idb";
 
 let db;
-async function criarDB(){
+async function bancoDB(){
     try {
         db = await openDB('banco', 1, {
             upgrade(db, oldVersion, newVersion, transaction){
                 switch  (oldVersion) {
                     case 0:
                     case 1:
-                        const store = db.createObjectStore('receitas', {
+                        const store = db.createObjectStore('receita', {
                             keyPath: 'nome'
                         });
                         store.createIndex('id', 'id');
@@ -23,18 +23,18 @@ async function criarDB(){
 }
 
 window.addEventListener('DOMContentLoaded', async event =>{
-    criarDB();
-    document.getElementById('btnSalvar').addEventListener('click', addReceita);
+    bancoDB();
+    document.getElementById('cadastrar').addEventListener('click', novaReceita);
 });
 
-async function addReceita() {
+async function novaReceita() {
     let nome = document.getElementById("nome").value;
     let nomeDono = document.getElementById("nomeDono").value;
-    let receita = document.getElementById("receita").value;
-    const tx = await db.transaction('receitas', 'readwrite')
-    const store = tx.objectStore('receitas');
+    let descricao = document.getElementById("descricao").value;
+    const tx = await db.transaction('receita', 'readwrite')
+    const store = tx.objectStore('receita');
     try {
-        await store.add({ nome: nome, nomeDono: nomeDono, receita: receita });
+        await store.add({ nome: nome, descricao: descricao, nomeDono: nomeDono });
         await tx.done;
         limparCampos();
         console.log('Receita adicionada com sucesso!');
@@ -46,39 +46,36 @@ async function addReceita() {
 
 function limparCampos() {
     document.getElementById("nome").value = '';
+    document.getElementById("descricao").value = '';
     document.getElementById("nomeDono").value = '';
-    document.getElementById("receita").value = '';
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const formulario = document.getElementById("entrada");
-    const titulo = document.getElementById("title");
-    const categ = document.getElementById("categoria");
-    const date = document.getElementById("data");
+    const form = document.getElementById("cadastro");
+    const nome = document.getElementById("name");
+    const dono = document.getElementById("nomeDono");
     const desc = document.getElementById("description");
-    const listar = document.getElementById("resultados");
+    const listar = document.getElementById("cadastros");
   
-    formulario.addEventListener("submit", (e) => {
+    form.addEventListener("submit", (e) => {
         e.preventDefault();
   
-        const title = titulo.value;
-        const categoria = categ.value;
-        const data = date.value;
+        const name = nome.value;
+        const nomeDono = dono.value;
         const description = desc.value;
 
   
-        if (title.trim() === "" || description.trim() === "" || categoria.trim() === "" || data.trim() === "") {
+        if (name.trim() === "" || description.trim() === "" || nomeDono.trim() === "") {
             alert("Por favor, preencha todos os campos.");
             return;
         }
   
         const li = document.createElement("li");
         li.innerHTML = `
-            <div class="note">
-            <hr color="LightSteelBlue"></hr>
-            <span>${title}:</span> 
-            ${categoria} <br/>
-            ${data} <br/>
+        <hr color="orange"></hr>
+            <div class="receita">
+            <span>${name}</span> <br/>
+            receita por: ${nomeDono} <br/>
             ${description}
             </div>
             <button class="excluir">excluir</button>
@@ -86,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
         listar.appendChild(li);
   
-        titulo.value = "";
+        nome.value = "";
         desc.value = "";
   
         li.querySelector(".excluir").addEventListener("click", () => {

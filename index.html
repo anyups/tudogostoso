@@ -30,26 +30,28 @@
     </div>
   
   <div class="body">
-    <form action="/" class="decor">
+    <form id="cadastro" class="decor">
         <div class="form-left-decoration"></div>
         <div class="form-right-decoration"></div>
         <div class="circle"></div>
         <div class="form-inner">
           <h1>Cadastre sua Receita</h1>
-          <input class="input" type="text" placeholder="Nome da receita" id="nome">
+          <input class="input" type="text" placeholder="Nome da receita" id="name">
           <input class="input" type="text" placeholder="Seu nome" id="nomeDono">
-          <textarea placeholder="Escreva aqui o passo a passo." rows="5" id="receita"></textarea>
+          <textarea placeholder="Escreva aqui o passo a passo." rows="5" id="description"></textarea>
           <button id="btnSalvar" class="button" type="submit" name="enviar">Enviar</button>
-          <button id="btnListar" class="button" type="submit" name="listar">Listar</button>
         </div>
     </form>
   </div>
+
   <div id="camera">
     <canvas id="camera--sensor"></canvas>
     <video id="camera--view" autoplay playsinline></video>
     <img src="//:0" alt="" id="camera--output">
     <button id="camera--trigger" class="button">tirar foto</button>
   </div>
+
+  <div id="cadastros"></div>
 
   <script src="js/main.js" type="module"></script>
   <script src="js/db.js" type="module"></script>
